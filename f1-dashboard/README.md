@@ -3,7 +3,7 @@
 
   <h1>F1 Pulse</h1>
 
-  <p>Sezoane, curse, piloți și clasamente Formula 1, într-un singur dashboard.</p>
+  <p>Formula 1 seasons, races, drivers and standings — all in one dashboard.</p>
 
   ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
   ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -13,115 +13,137 @@
 
 ---
 
-## Despre proiect
+## About
 
-**F1 Pulse** este o aplicație React pentru explorarea sezoanelor Formula 1, începând cu anul **2000**.
+**F1 Pulse** is a React application for exploring Formula 1 seasons from **2000 to the present**.
 
-Aplicația folosește date din **Jolpica F1 API** și oferă un dashboard cu informații despre sezonul selectat, calendarul curselor, piloți, echipe și clasamente.
+Powered by the **Jolpica F1 API**, it brings together race calendars, driver information, team statistics and championship standings.
 
-Interfața păstrează un design întunecat, cu accente roșii, steaguri, sigle și fotografii locale ale piloților.
+The interface features a dark theme with red accents, country flags, team logos and locally stored driver portraits.
 
-## Funcționalități
+## Live Demo
 
-- **Dashboard** — statistici despre sezon, următoarea cursă, clasamente și ultimele rezultate.
-- **Calendar** — lista curselor, cu filtre pentru curse viitoare și trecute.
-- **Detaliile cursei** — circuit, fotografie, dată și programul sesiunilor în UTC.
-- **Rezultate complete** — poziții, piloți, echipe, tururi, timpi și puncte.
-- **Piloți** — fotografii, căutare și statistici, cu cardurile ordonate după clasamentul echipelor.
-- **Echipe** — sigle, căutare și statistici, în ordinea clasamentului constructorilor.
-- **Clasamente** — clasificările complete pentru piloți și constructori.
-- **Setări** — selectarea sezonului din 2000 până în prezent, cu salvare automată în browser.
+🏎️ **[Explore F1 Pulse](https://f1dashboardgugflaviu.netlify.app/)**
 
-## Tehnologii
+## Features
 
-| Tehnologie | Utilizare |
+- **Dashboard** — season statistics, the next race, championship leaders and recent results.
+- **Race Calendar** — browse the season and filter upcoming or past races.
+- **Race Details** — circuit information, photographs and weekend schedules in UTC.
+- **Full Race Results** — finishing positions, drivers, teams, laps, times and points.
+- **Drivers** — portraits, search and statistics, ordered by their teams’ championship positions.
+- **Teams** — logos, search and statistics, ordered by the constructors’ standings.
+- **Championship Standings** — complete driver and constructor classifications.
+- **Settings** — select a season from 2000 onwards, with your preference saved automatically in the browser.
+- **Responsive Layout** — adapted navigation and layouts for desktop and mobile screens.
+
+## Tech Stack
+
+| Technology | Purpose |
 | --- | --- |
-| React | Componente și gestionarea stării |
-| Vite | Server de dezvoltare și build |
-| React Router | Navigarea între pagini |
-| CSS | Design și adaptare la dimensiunea ecranului |
-| React Icons | Iconuri pentru interfață |
-| Flag Icons | Steagurile țărilor |
-| Jolpica F1 API | Date despre Formula 1 |
+| React | Components and state management |
+| Vite | Development server and production builds |
+| React Router | Client-side navigation |
+| CSS | Styling and responsive layouts |
+| React Icons | Interface icons |
+| Flag Icons | Country flags |
+| Jolpica F1 API | Formula 1 data |
+| ESLint | Code linting |
 
-Codul folosește componente funcționale, `useState`, `useEffect`, props și requesturi cu `fetch`.
+The application uses functional components, `useState`, `useEffect`, props and `fetch` requests.
 
-## Instalare și pornire
+## Getting Started
 
-Ai nevoie de **Node.js** și **npm** instalate.
+### Prerequisites
 
-Din directorul proiectului, instalează dependențele:
+Make sure **Node.js** and **npm** are installed.
+
+### Install dependencies
+
+Run the following command from the project directory:
 
 ```bash
 npm install
 ```
 
-Pornește serverul de dezvoltare:
+### Start the development server
 
 ```bash
 npm run dev
 ```
 
-Deschide în browser adresa afișată în terminal.
+Open the local URL displayed in your terminal.
 
-## Comenzi disponibile
+### Create a production build
 
-| Comandă | Descriere |
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+## Available Scripts
+
+| Command | Description |
 | --- | --- |
-| `npm run dev` | Pornește serverul de dezvoltare |
-| `npm run build` | Generează versiunea pentru producție |
-| `npm run preview` | Afișează local versiunea compilată |
-| `npm run lint` | Verifică regulile ESLint |
+| `npm run dev` | Start the development server |
+| `npm run build` | Generate the production build |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint checks |
 
-## Structura proiectului
+## Project Structure
 
 ```text
 src/
 ├── assets/
-│   ├── circuits/       # Fotografii și iconuri ale circuitelor
-│   ├── drivers/        # Portrete ale piloților
-│   └── teams/          # Siglele echipelor
+│   ├── circuits/       # Circuit photographs and icons
+│   ├── drivers/        # Driver portraits
+│   └── teams/          # Team logos
 ├── components/
-│   ├── dashboard/      # Componentele dashboardului
-│   ├── races/          # Calendar, detalii și rezultate
-│   └── standings/      # Tabelele clasamentelor complete
+│   ├── dashboard/      # Dashboard components
+│   ├── races/          # Calendar, race details and results
+│   └── standings/      # Full championship tables
 ├── data/
-│   ├── api.js          # Funcțiile pentru requesturile API
+│   ├── api.js          # API request functions
 │   ├── circuitAssets.js
 │   ├── driverAssets.js
 │   └── teamAssets.js
-├── pages/              # Paginile aplicației și stilurile lor
-├── App.jsx             # Rutele și sezonul selectat
-└── main.jsx            # Inițializarea aplicației
+├── pages/              # Application pages and their styles
+├── App.jsx             # Routes and selected season
+└── main.jsx            # Application entry point
 ```
 
-## Pagini și rute
+## Routes
 
-| Rută | Pagină |
+| Route | Page |
 | --- | --- |
 | `/` | Dashboard |
-| `/races` | Calendarul curselor |
-| `/races/:round` | Detaliile unei curse |
-| `/races/:round/results` | Rezultatele unei curse |
-| `/drivers` | Piloți |
-| `/teams` | Echipe |
-| `/standings/drivers` | Clasamentul piloților |
-| `/standings/teams` | Clasamentul constructorilor |
-| `/settings` | Setări |
+| `/races` | Race calendar |
+| `/races/:round` | Race details |
+| `/races/:round/results` | Full race results |
+| `/drivers` | Drivers |
+| `/teams` | Teams |
+| `/standings/drivers` | Driver standings |
+| `/standings/teams` | Constructor standings |
+| `/settings` | Settings |
 
-## Date și resurse vizuale
+## Data and Visual Assets
 
-Datele sunt preluate din [Jolpica F1 API](https://github.com/jolpica/jolpica-f1).
+Formula 1 data is provided by the [Jolpica F1 API](https://github.com/jolpica/jolpica-f1).
 
-Fotografiile disponibile ale piloților și siglele echipelor sunt păstrate local. Pentru piloții fără fotografie disponibilă, aplicația afișează o pictogramă implicită.
+Driver portraits and team logos are stored locally. The bundled driver portraits are from the 2026 season. Drivers without an available portrait use a fallback icon.
 
-Sursele imaginilor sunt documentate în:
+Image sources are documented in:
 
-- [Fotografiile piloților](src/assets/drivers/SOURCES.md)
-- [Siglele echipelor](src/assets/teams/SOURCES.md)
+- [Driver portrait sources](src/assets/drivers/SOURCES.md)
+- [Team logo sources](src/assets/teams/SOURCES.md)
 
 ---
 
 <div align="center">
-  <strong>F1 Pulse — urmărește sezonul, explorează fiecare cursă.</strong>
+  <strong>F1 Pulse — follow the season, explore every race.</strong>
 </div>
