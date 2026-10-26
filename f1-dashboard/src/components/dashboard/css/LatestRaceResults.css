@@ -1,0 +1,165 @@
+.latest-results-card {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d1721 0%, #09121a 100%);
+  border: 1px solid #182530;
+  border-radius: 12px;
+}
+
+.latest-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.latest-race-summary {
+  min-width: 0;
+}
+
+.latest-results-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.latest-results-header p {
+  margin: 4px 0 0;
+  color: #8493a3;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.results-btn {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid #31404d;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.results-btn:hover {
+  background: #14212c;
+  border-color: #455665;
+}
+
+.results-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.results-table {
+  width: 100%;
+}
+
+.results-table-header,
+.result-row {
+  display: grid;
+  grid-template-columns: 55px 1.4fr 1fr 100px;
+  align-items: center;
+}
+
+.results-table-header {
+  min-height: 34px;
+  padding: 0 10px;
+  background: #0f1a23;
+  color: #8e9cab;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.result-row {
+  min-height: 42px;
+  padding: 0 10px;
+  color: #dce4ec;
+  font-size: 14px;
+  border-bottom: 1px solid #182530;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-row:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.result-position {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.result-driver {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.driver-team-color {
+  width: 4px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.result-team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: #9ba8b6;
+}
+
+.result-team img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.result-team > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.results-status {
+  margin: 0;
+  padding: 16px 10px;
+  color: #8493a3;
+  font-size: 14px;
+}
+
+.result-time-column,
+.result-time {
+  text-align: right;
+}
+
+.result-time {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .results-table-header,
+  .result-row {
+    grid-template-columns: 45px 1fr 90px;
+  }
+
+  .results-table-header span:nth-child(3),
+  .result-team {
+    display: none;
+  }
+}

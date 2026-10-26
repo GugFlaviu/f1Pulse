@@ -1,0 +1,135 @@
+.upcoming-races-card {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d1721 0%, #09121a 100%);
+  border: 1px solid #182530;
+  border-radius: 12px;
+}
+
+.upcoming-races-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.upcoming-races-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.upcoming-calendar-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid #31404d;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.upcoming-calendar-btn:hover {
+  background: #14212c;
+  border-color: #455665;
+}
+
+.upcoming-calendar-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.upcoming-table {
+  width: 100%;
+}
+
+.upcoming-table-header,
+.upcoming-row {
+  display: grid;
+  grid-template-columns: 80px 180px 1fr 1.4fr;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.upcoming-table-header > span:nth-child(2),
+.upcoming-row > span:nth-child(2) {
+  padding-right: 16px;
+  white-space: nowrap;
+}
+
+.upcoming-table-header {
+  min-height: 34px;
+  padding: 0 10px;
+  background: #0f1a23;
+  color: #8e9cab;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.upcoming-row {
+  min-height: 42px;
+  padding: 0 10px;
+  color: #dce4ec;
+  font-size: 14px;
+  border-bottom: 1px solid #182530;
+}
+
+.upcoming-row:last-child {
+  border-bottom: none;
+}
+
+.upcoming-row:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.upcoming-grand-prix,
+.upcoming-circuit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.race-country-flag {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.circuit-small-icon {
+  width: 26px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.upcoming-status {
+  margin: 0;
+  padding: 16px 10px;
+  color: #8e9cab;
+  font-size: 14px;
+}
+
+.upcoming-grand-prix span:last-child,
+.upcoming-circuit span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .upcoming-table-header,
+  .upcoming-row {
+    grid-template-columns: 60px 150px minmax(0, 1fr);
+  }
+
+  .upcoming-table-header span:last-child,
+  .upcoming-circuit {
+    display: none;
+  }
+}

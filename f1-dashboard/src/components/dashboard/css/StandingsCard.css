@@ -1,0 +1,126 @@
+.standings-card {
+  width: 100%;
+  height: 295px;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d1721 0%, #09121a 100%);
+  border: 1px solid #182530;
+  border-radius: 12px;
+}
+
+.standings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.standings-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.standings-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid #31404d;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.standings-btn:hover {
+  background: #14212c;
+  border-color: #455665;
+}
+
+.standings-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.standings-table {
+  width: 100%;
+}
+
+.standings-table-header,
+.standings-row {
+  display: grid;
+  grid-template-columns: 40px 1.4fr 1fr 70px;
+  align-items: center;
+}
+
+.standings-table-header {
+  min-height: 34px;
+  padding: 0 10px;
+  background: #0f1a23;
+  color: #8e9cab;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.standings-row {
+  min-height: 41px;
+  padding: 0 10px;
+  color: #dce4ec;
+  font-size: 14px;
+  border-bottom: 1px solid #182530;
+}
+
+.standings-row:last-child {
+  border-bottom: none;
+}
+
+.standings-row:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.standing-position {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.standing-driver,
+.standing-team {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.standing-driver img {
+  width: 26px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.standing-team img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.standing-driver span,
+.standing-team span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.points-column,
+.standing-points {
+  text-align: right;
+}
+
+.standing-points {
+  color: #ffffff;
+  font-weight: 500;
+}

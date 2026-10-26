@@ -88,3 +88,24 @@
 .sidebar-nav a.active svg {
   color: #ff3049;
 }
+
+@media (max-width: 700px) {
+  .sidebar-nav {
+    width: 72px;
+    padding: 20px 8px;
+  }
+
+  .logo-sidebar {
+    width: 52px;
+    margin: 5px auto 24px;
+  }
+
+  .sidebar-nav a {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sidebar-nav a span {
+    display: none;
+  }
+}

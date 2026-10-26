@@ -1,9 +1,22 @@
 import "./Topbar.css";
 import { FiClock } from "react-icons/fi";
 import { useEffect, useState } from "react";
-export default function Topbar() {
-  const d = new Date();
-  let year = d.getFullYear();
+import { useLocation } from "react-router-dom";
+
+export default function Topbar({ year }) {
+  const { pathname } = useLocation();
+  const pageTitles = {
+    races: "Races",
+    drivers: "Drivers",
+    teams: "Teams",
+    standings: "Standings",
+    settings: "Settings",
+  };
+  const title = pathname === "/"
+    ? "Season Dashboard"
+    : pathname.endsWith("/results")
+      ? "Race Results"
+      : pageTitles[pathname.split("/")[1]] ?? "Page Not Found";
   const [time, setTime] = useState(new Date());
   const currentTime = time.toLocaleTimeString([], {
     hour: "2-digit",
@@ -26,7 +39,7 @@ export default function Topbar() {
   return (
     <div className="topbar">
       <h1 className="topbar-title">
-        <span>{year}</span> Season Dashboard
+        <span>{year}</span> {title}
       </h1>
       <div className="topbar-time">
         {<FiClock />}

@@ -1,0 +1,246 @@
+
+.dashboard {
+  --dashboard-gap: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--dashboard-gap);
+  margin-top: var(--dashboard-gap);
+}
+
+.dashboard a {
+  text-decoration: none;
+}
+
+/* DASHBOARD LAYOUT */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--dashboard-gap);
+}
+.dashboard-main-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: var(--dashboard-gap);
+  align-items: stretch;
+}
+.dashboard-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--dashboard-gap);
+  align-items: stretch;
+}
+.dashboard-stats > *,
+.dashboard-main-grid > *,
+.dashboard-bottom-grid > * {
+  min-width: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.dashboard-main-grid .next-race-card,
+.dashboard-main-grid .standings-card,
+.dashboard-bottom-grid .upcoming-races-card,
+.dashboard-bottom-grid .latest-results-card {
+  width: 100%;
+  height: 100%;
+}
+
+/* CHAMPIONSHIP LEADER */
+.dashboard-stats .stat-card:last-child {
+  background: linear-gradient(120deg, #0c1620, #17111c);
+  border: 1px solid rgba(255, 53, 84, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.dashboard-stats .stat-card:last-child::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 0;
+  width: 3px;
+  background: #ff3658;
+  border-radius: 3px;
+}
+.dashboard-stats .stat-card:last-child .text-side-right {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+.dashboard-stats .stat-card:last-child .stat-title {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: #aab8c9;
+}
+.dashboard-stats .stat-card:last-child .stat-number {
+  margin: 0;
+  font-size: clamp(17px, 1.3vw, 21px);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.dashboard-stats .stat-card:last-child .stat-paragraph {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ff5472;
+}
+
+/* RESPONSIVE - TABLET */
+@media (max-width: 1400px) {
+  .dashboard-main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .dashboard-main-grid > :first-child {
+    grid-column: 1 / -1;
+  }
+  .dashboard-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1100px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-main-grid > :first-child {
+    grid-column: auto;
+  }
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 700px) {
+  .dashboard {
+    --dashboard-gap: 14px;
+  }
+  .dashboard-stats,
+  .dashboard-main-grid,
+  .dashboard-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* DESKTOP - FIT DASHBOARD TO VIEWPORT */
+@media (min-width: 1200px) and (min-height: 650px) {
+  .dashboard {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: clamp(84px, 12dvh, 114px) repeat(2, minmax(0, 1fr));
+  }
+  .dashboard-main-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .dashboard-main-grid > :first-child {
+    grid-column: auto;
+  }
+  .dashboard-bottom-grid {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  }
+  .dashboard > section,
+  .dashboard > section > * {
+    min-height: 0;
+  }
+
+  /* STAT CARDS */
+  .dashboard .stat-card {
+    height: 100%;
+    padding: 10px 12px;
+    gap: 12px;
+  }
+  .dashboard .stat-number {
+    font-size: clamp(20px, 1.6vw, 30px);
+    overflow-wrap: anywhere;
+  }
+
+  /* CONTENT CARDS */
+  .dashboard .next-race-card,
+  .dashboard .standings-card,
+  .dashboard .upcoming-races-card,
+  .dashboard .latest-results-card {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(10px, 1.4dvh, 14px);
+  }
+
+  /* CARD HEADERS */
+  .dashboard .next-race-header,
+  .dashboard .standings-header,
+  .dashboard .upcoming-races-header,
+  .dashboard .latest-results-header {
+    flex-shrink: 0;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .dashboard h2 {
+    font-size: clamp(14px, 1.1vw, 18px);
+  }
+  .dashboard button,
+  .dashboard a {
+    flex-shrink: 0;
+    padding: 6px 8px;
+    font-size: clamp(10px, 0.8vw, 13px);
+  }
+
+  /* TABLES */
+  .dashboard .standings-table,
+  .dashboard .upcoming-table,
+  .dashboard .results-table {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: 26px repeat(5, minmax(0, 1fr));
+  }
+  .dashboard .standings-table > *,
+  .dashboard .upcoming-table > *,
+  .dashboard .results-table > * {
+    min-height: 0;
+    padding: 0 6px;
+  }
+  .dashboard .standings-table > * {
+    grid-template-columns: 24px minmax(0, 1.4fr) minmax(0, 1fr) 42px;
+  }
+  .dashboard .standings-table > :has(> :nth-child(3):last-child) {
+    grid-template-columns: 24px minmax(0, 1fr) 42px;
+  }
+  .dashboard .upcoming-table > * {
+    grid-template-columns: 40px 150px minmax(0, 1fr) minmax(0, 1.4fr);
+  }
+  .dashboard .results-table > * {
+    grid-template-columns: 26px minmax(0, 1.4fr) minmax(0, 1fr) 90px;
+  }
+
+  /* TEXT OVERFLOW */
+  .dashboard .result-driver,
+  .dashboard .result-team,
+  .dashboard .result-driver > span:last-child {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dashboard .driver-team-color {
+    height: 18px;
+  }
+
+  /* NEXT RACE */
+  .dashboard .next-race-info,
+  .dashboard .race-meta {
+    flex-shrink: 0;
+    margin-bottom: 8px;
+  }
+  .dashboard .race-image-frame {
+    flex: 1;
+    min-height: 0;
+    height: 0;
+    max-height: clamp(120px, 18dvh, 180px);
+  }
+}
